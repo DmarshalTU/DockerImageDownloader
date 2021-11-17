@@ -300,5 +300,3 @@ def docker():
         subprocess.run("clear",shell=True)
     elif os_name=="windows":
         subprocess.run("cls",shell=True)
-
-      

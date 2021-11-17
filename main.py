@@ -1,12 +1,21 @@
 import os
 from Docker.docker import docker
 from welcome import welcome
+import subprocess
+import platform
 
+
+def clear_screen():
+    os_name=platform.system().lower()
+    if os_name=="linux":
+        subprocess.run("clear",shell=True)
+    elif os_name=="windows":
+        subprocess.run("cls",shell=True)
 
 def main():
     while True:
-        os.system("clear")
-        print(welcome("AXON"))
+        clear_screen()
+        print(welcome("AXON - CodeWizard"))
         print("\nChoose service you want to use : ")
         print("""
         1 : Docker
@@ -19,7 +28,7 @@ def main():
             docker()
         elif choice == '0':
             exit()
-        os.system("clear")
+        clear_screen()
 
 
 if __name__ == "__main__":
