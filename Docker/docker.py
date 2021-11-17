@@ -193,7 +193,8 @@ def docker():
   while True:
 
     print(welcome("Docker"))
-    print("""    1. Launch a new Conatiner
+    print("""
+    1. Launch a new Conatiner
     2. Pull/Download image
     3. Remove image
     4. Remove Container
@@ -202,15 +203,16 @@ def docker():
     7. Copy Content from Conatiner to Base OS
     8. See the list of all running Containers
     9. See list of all Containers[active and inactive]
-   10. Start existing Container
-   11. Get terminal of Existing Container
-   12. Start Docker Services
-   13. Stop running  Container
-   14. Stop Docker Services.
-   15. List all inactive containers
-   16. Stop All running containers
-   17. Go Back
-""")
+    10. Start existing Container
+    11. Get terminal of Existing Container
+    12. Start Docker Services
+    13. Stop running  Container
+    14. Stop Docker Services.
+    15. List all inactive containers
+    16. Stop All running containers
+    0. Go Back
+    """
+    )
     choice=int(input("Enter your choice : "))
     if choice ==1:
         print(Fore.GREEN + "\n\nListing all images...\n")
