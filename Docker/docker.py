@@ -210,6 +210,7 @@ def docker():
     14. Stop Docker Services.
     15. List all inactive containers
     16. Stop All running containers
+    99. pull tensorflow:21.10-tf1-py3
     0. Go Back
     """
     )
@@ -289,8 +290,19 @@ def docker():
         list_all_stopped_conatiner()
     elif choice==16:
         stop_all_containers()
-    elif choice==17:
+    elif choice==0:
         return
+    elif choice ==99:
+        print(Fore.GREEN + "\n\nPulling tensorflow:21.10-tf1-py3...\n")
+        print(Style.RESET_ALL)
+        o=subprocess.run(f"docker pull nvcr.io/nvidia/tensorflow:21.10-tf1-py3",shell=True,text=True,stderr=subprocess.PIPE)
+
+        if o.returncode == 0:
+            print(Fore.GREEN + "Image download succesfully..:)")
+            print(Style.RESET_ALL)
+        else:
+            print(Fore.RED + f"Some error happened..:(\n{o.stderr}")
+            print(Style.RESET_ALL)
     else:
         print(Fore.RED + "Oops!! You have entered wrong choice....")
         print(Style.RESET_ALL)
