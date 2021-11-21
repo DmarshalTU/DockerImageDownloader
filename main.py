@@ -15,7 +15,7 @@ def clear_screen():
 def main():
     while True:
         clear_screen()
-        print(welcome("AXON - CodeWizard"))
+        print(welcome("Denni TU - CodeWizard"))
         print("\nChoose service you want to use : ")
         print("""
         1 : Docker
